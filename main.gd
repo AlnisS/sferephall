@@ -1,5 +1,7 @@
 extends Spatial
 
+var temporary_barrier = preload("res://items/temporary_barrier/temporary_barrier.tscn")
+
 var last_mouse_position: Vector2 = Vector2.ZERO
 
 func _physics_process(delta):
@@ -28,7 +30,11 @@ func _physics_process(delta):
 		var space_state = get_world().get_direct_space_state()
 		var result = space_state.intersect_ray(from, to)
 		if result:
-			$Target.translation = result.position
+			var instance = temporary_barrier.instance()
+			add_child(instance)
+			print(result.normal)
+			instance.look_at_from_position(result.position, result.position + result.normal, Vector3.UP)
+#			$Target.translation = result.position
 	
 	$SpotLightPivot.translation = $Ball.get_global_transform().origin
 	
