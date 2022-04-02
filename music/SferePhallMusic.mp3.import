@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/SferePhallMusic.mp3-6b24390215013268c34c4e75b7f584f1.mp3str"
+
+[deps]
+
+source_file="res://music/SferePhallMusic.mp3"
+dest_files=[ "res://.import/SferePhallMusic.mp3-6b24390215013268c34c4e75b7f584f1.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -108,7 +108,7 @@ anims/bounce = SubResource( 3 )
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource( 4 )
-unit_db = 10.0
+unit_db = 20.0
 bus = "Props"
 
 [connection signal="body_entered" from="." to="." method="_on_BouncePlate_body_entered"]
