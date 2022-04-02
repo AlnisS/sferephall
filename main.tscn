@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://main.gd" type="Script" id=1]
+[ext_resource path="res://objects/mini_plank/mini_plank.tscn" type="PackedScene" id=2]
 
 [sub_resource type="SpatialMaterial" id=1]
 metallic = 1.0
@@ -27,6 +28,8 @@ can_sleep = false
 
 [node name="BallVisual" type="CSGSphere" parent="Ball"]
 radius = 0.2
+radial_segments = 24
+rings = 12
 material = SubResource( 1 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Ball"]
@@ -36,41 +39,48 @@ shape = SubResource( 2 )
 
 [node name="SpotLightPositive" type="SpotLight" parent="SpotLightPivot"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 2, 0 )
+light_energy = 0.168
 shadow_enabled = true
 spot_angle = 19.7683
 
 [node name="SpotLightNegative" type="SpotLight" parent="SpotLightPivot"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 2, 0 )
+visible = false
 light_negative = true
 spot_angle = 19.7683
 
 [node name="Level" type="Spatial" parent="."]
 
 [node name="CSGBox" type="CSGBox" parent="Level"]
-transform = Transform( 1, 0, 0, 0, 0.965926, -0.258819, 0, 0.258819, 0.965926, 0, -2, 0 )
+transform = Transform( 1, 0, 0, 0, 0.965926, -0.258819, 0, 0.258819, 0.965926, 0, -2, -2.29118 )
 use_collision = true
 width = 4.0
 depth = 6.0
 material = SubResource( 3 )
 
-[node name="CSGBox2" type="CSGBox" parent="Level"]
-transform = Transform( 1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, -6, 4 )
-use_collision = true
-width = 6.0
-depth = 14.0
+[node name="MiniPlank" parent="Level" instance=ExtResource( 2 )]
+transform = Transform( 0.996195, 0.0868241, 0.00759612, -0.0871557, 0.992404, 0.0868241, 0, -0.0871557, 0.996195, 0, -5, 5 )
 
-[node name="CSGBox3" type="CSGBox" parent="Level"]
-transform = Transform( 1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, -14, 4 )
-cast_shadow = 0
-use_collision = true
-width = 6.0
-depth = 14.0
+[node name="MiniPlank2" parent="Level" instance=ExtResource( 2 )]
+transform = Transform( -0.996195, -0.086824, -0.00759623, 0.0871556, -0.992404, -0.0868242, -1.13156e-07, -0.0871558, 0.996195, 0, -5, 0.817782 )
 
-[node name="CSGBox4" type="CSGBox" parent="Level"]
-transform = Transform( 1, 0, 0, 0, 0.965926, -0.258819, 0, 0.258819, 0.965926, 0, -11, -11 )
-use_collision = true
-width = 6.0
-depth = 14.0
+[node name="MiniPlank3" parent="Level" instance=ExtResource( 2 )]
+transform = Transform( -0.118892, -0.0947068, -0.98838, 0.0849667, 0.990819, -0.105161, 0.989265, -0.0964823, -0.109754, 7.31386, -6.44084, 3.15511 )
+
+[node name="MiniPlank4" parent="Level" instance=ExtResource( 2 )]
+transform = Transform( 0.118893, 0.0783624, 0.98981, -0.0849667, 0.994027, -0.0684904, -0.989265, -0.0759579, 0.124841, 3.16145, -6.51782, 2.66267 )
+
+[node name="MiniPlank5" parent="Level" instance=ExtResource( 2 )]
+transform = Transform( 0.621758, 0.135197, 0.771452, 0.0754075, -0.990746, 0.112853, 0.779571, -0.0119938, -0.626199, 7.24224, -8.12031, -2.31673 )
+
+[node name="MiniPlank6" parent="Level" instance=ExtResource( 2 )]
+transform = Transform( 0.621758, 0.000818413, -0.783209, 0.0754076, 0.995291, 0.0609031, 0.779571, -0.0969269, 0.618769, 3.97886, -8.22936, 0.296574 )
+
+[node name="MiniPlank7" parent="Level" instance=ExtResource( 2 )]
+transform = Transform( -0.621758, -0.135197, 0.771452, -0.0754076, 0.990746, 0.112853, -0.779571, 0.0119937, -0.626199, 3.40432, -8.77914, -6.96819 )
+
+[node name="MiniPlank8" parent="Level" instance=ExtResource( 2 )]
+transform = Transform( -0.621758, -0.000818487, -0.783209, -0.0754076, -0.995291, 0.0609032, -0.779571, 0.0969269, 0.618769, 0.140933, -8.88819, -4.35489 )
 
 [node name="CameraPivot" type="Spatial" parent="."]
 
