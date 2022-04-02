@@ -32,5 +32,10 @@ func _physics_process(delta):
 	
 	$SpotLightPivot.translation = $Ball.get_global_transform().origin
 	
+	var music_position: float = $TrackMusic.get_playback_position()
+	if music_position > 35.2:
+		music_position -= 35.2
+		$TrackMusic.seek(music_position)
+	
 	last_mouse_position = mouse_position
 
