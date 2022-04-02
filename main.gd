@@ -33,6 +33,13 @@ func _physics_process(delta):
 	$SpotLightPivot.translation = $Ball.get_global_transform().origin
 	_loop_track_music_if_needed()
 	last_mouse_position = mouse_position
+	
+	if Input.is_action_pressed("slow_motion"):
+		Engine.time_scale = lerp(Engine.time_scale, 0.5, 0.2)
+	else:
+		Engine.time_scale = lerp(Engine.time_scale, 1.0, 0.2)
+	
+	$TrackMusic.pitch_scale = Engine.time_scale
 
 
 
