@@ -30,5 +30,7 @@ func _physics_process(delta):
 		if result:
 			$Target.translation = result.position
 	
+	$SpotLightPivot.translation = $Ball.get_global_transform().origin
+	
 	last_mouse_position = mouse_position
 

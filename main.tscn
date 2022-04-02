@@ -32,24 +32,22 @@ material = SubResource( 1 )
 [node name="CollisionShape" type="CollisionShape" parent="Ball"]
 shape = SubResource( 2 )
 
-[node name="SunPositive" type="DirectionalLight" parent="."]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0 )
-visible = false
-light_specular = 0.0
-shadow_enabled = true
+[node name="SpotLightPivot" type="Spatial" parent="."]
 
-[node name="SunNegative" type="DirectionalLight" parent="."]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0 )
-visible = false
-light_negative = true
-light_specular = 0.0
+[node name="SpotLightPositive" type="SpotLight" parent="SpotLightPivot"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 2, 0 )
 shadow_enabled = true
+spot_angle = 19.7683
+
+[node name="SpotLightNegative" type="SpotLight" parent="SpotLightPivot"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 2, 0 )
+light_negative = true
+spot_angle = 19.7683
 
 [node name="Level" type="Spatial" parent="."]
 
 [node name="CSGBox" type="CSGBox" parent="Level"]
 transform = Transform( 1, 0, 0, 0, 0.965926, -0.258819, 0, 0.258819, 0.965926, 0, -2, 0 )
-cast_shadow = 0
 use_collision = true
 width = 4.0
 depth = 6.0
@@ -57,7 +55,6 @@ material = SubResource( 3 )
 
 [node name="CSGBox2" type="CSGBox" parent="Level"]
 transform = Transform( 1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, -6, 4 )
-cast_shadow = 0
 use_collision = true
 width = 6.0
 depth = 14.0
@@ -71,7 +68,6 @@ depth = 14.0
 
 [node name="CSGBox4" type="CSGBox" parent="Level"]
 transform = Transform( 1, 0, 0, 0, 0.965926, -0.258819, 0, 0.258819, 0.965926, 0, -11, -11 )
-cast_shadow = 0
 use_collision = true
 width = 6.0
 depth = 14.0
@@ -83,6 +79,8 @@ transform = Transform( 0.707107, -0.408244, 0.577353, 0, 0.816501, 0.577345, -0.
 fov = 30.0
 
 [node name="Target" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4 )
+cast_shadow = 0
 use_collision = true
 width = 0.5
 height = 0.5
