@@ -4,6 +4,9 @@ func _ready():
 	$AnimationPlayer.play("placing")
 #	$AnimationPlayer.play("spawn")
 
+func move_to_mouse(result):
+	look_at_from_position(result.position, result.position + result.normal, Vector3.UP)
+
 func place():
 	$AnimationPlayer.play("lifespan")
 
