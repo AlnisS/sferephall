@@ -1,8 +1,11 @@
 extends CSGBox
 
 func _ready():
-	$AnimationPlayer.play("spawn")
+	$AnimationPlayer.play("placing")
+#	$AnimationPlayer.play("spawn")
 
+func place():
+	$AnimationPlayer.play("lifespan")
 
 func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name == "spawn":

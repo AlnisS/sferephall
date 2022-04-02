@@ -78,6 +78,9 @@ transform = Transform( -0.621758, -0.000818487, -0.783209, -0.0754076, -0.995291
 [node name="bounce_plate" parent="Level" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 0.977918, -0.208987, 0, 0.208987, 0.977918, -0.0268073, -5.26218, -0.179804 )
 
+[node name="bounce_plate3" parent="Level" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 0.977918, -0.208987, 0, 0.208987, 0.977918, -1.48047, -11.4906, -9.31486 )
+
 [node name="bounce_plate2" parent="Level" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, -0.999747, 0.0224957, 0, -0.0224957, -0.999747, -0.0268073, -2.79484, 2.517 )
 
