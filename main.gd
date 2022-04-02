@@ -2,9 +2,11 @@ extends Spatial
 
 var temporary_barrier = preload("res://items/temporary_barrier/temporary_barrier.tscn")
 var damping_area = preload("res://items/damping_area/damping_area.tscn")
+var anti_gravity_area = preload("res://items/anti_gravity_area/anti_gravity_area.tscn")
 
-var active_item = temporary_barrier
+#var active_item = temporary_barrier
 #var active_item = damping_area
+var active_item = anti_gravity_area
 
 var item_instance = null
 
