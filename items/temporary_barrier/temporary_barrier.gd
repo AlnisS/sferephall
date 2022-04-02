@@ -2,10 +2,9 @@ extends CSGBox
 
 func _ready():
 	$AnimationPlayer.play("placing")
-#	$AnimationPlayer.play("spawn")
 
-func move_to_mouse(result):
-	look_at_from_position(result.position, result.position + result.normal, Vector3.UP)
+func move_to_mouse(raycast):
+	look_at_from_position(raycast.position, raycast.position + raycast.normal, Vector3.UP)
 
 func place():
 	$AnimationPlayer.play("lifespan")
