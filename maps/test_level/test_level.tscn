@@ -1,0 +1,88 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://objects/bounce_plate/bounce_plate.gd" type="Script" id=1]
+[ext_resource path="res://objects/bounce_plate/bounce_plate.tscn" type="PackedScene" id=2]
+[ext_resource path="res://objects/mini_plank/mini_plank.tscn" type="PackedScene" id=3]
+[ext_resource path="res://objects/mini_board/mini_board.tscn" type="PackedScene" id=4]
+
+[sub_resource type="PhysicsMaterial" id=3]
+bounce = 0.5
+
+[sub_resource type="PhysicsMaterial" id=5]
+bounce = 1.0
+
+[node name="TestLevel" type="Spatial"]
+
+[node name="MiniPlank" type="RigidBody" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.996195, 0.084217, 0.0224415, -0.0871557, 0.962605, 0.256507, 1.86265e-09, -0.257487, 0.966282, 0, -7.2518, 5 )
+mode = 3
+physics_material_override = SubResource( 3 )
+
+[node name="MiniPlank2" type="RigidBody" parent="." instance=ExtResource( 3 )]
+transform = Transform( -0.996195, -0.0859081, -0.0146939, 0.0871557, -0.981935, -0.167951, -1.05239e-07, -0.168593, 0.985686, 0, -7.2518, 0.817782 )
+mode = 3
+physics_material_override = SubResource( 3 )
+
+[node name="MiniPlank3" type="RigidBody" parent="." instance=ExtResource( 3 )]
+transform = Transform( -0.118892, -0.0947068, -0.98838, 0.0849667, 0.990819, -0.105161, 0.989265, -0.0964823, -0.109754, 7.31386, -9.80029, 3.15511 )
+mode = 3
+physics_material_override = SubResource( 3 )
+
+[node name="MiniPlank4" type="RigidBody" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.118893, 0.0783624, 0.98981, -0.0849667, 0.994027, -0.0684904, -0.989265, -0.0759579, 0.124841, 3.16145, -9.87726, 2.66267 )
+mode = 3
+physics_material_override = SubResource( 3 )
+
+[node name="MiniPlank5" type="RigidBody" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.621758, 0.135197, 0.771452, 0.0754075, -0.990746, 0.112853, 0.779571, -0.0119938, -0.626199, 7.24224, -11.4798, -2.31673 )
+mode = 3
+physics_material_override = SubResource( 3 )
+
+[node name="MiniPlank6" type="RigidBody" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.621758, 0.000818413, -0.783209, 0.0754076, 0.995291, 0.0609031, 0.779571, -0.0969269, 0.618769, 3.97886, -11.5888, 0.296574 )
+mode = 3
+physics_material_override = SubResource( 3 )
+
+[node name="MiniPlank7" type="RigidBody" parent="." instance=ExtResource( 3 )]
+transform = Transform( -0.621758, -0.135197, 0.771452, -0.0754076, 0.990746, 0.112853, -0.779571, 0.0119937, -0.626199, 3.40432, -12.1386, -6.96819 )
+mode = 3
+physics_material_override = SubResource( 3 )
+
+[node name="MiniPlank8" type="RigidBody" parent="." instance=ExtResource( 3 )]
+transform = Transform( -0.621758, -0.000818487, -0.783209, -0.0754076, -0.995291, 0.0609032, -0.779571, 0.0969269, 0.618769, 0.140933, -12.2476, -4.35489 )
+mode = 3
+physics_material_override = SubResource( 3 )
+
+[node name="bounce_plate" type="RigidBody" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.977918, -0.208987, 0, 0.208987, 0.977918, -0.0268073, -5.26218, -0.179804 )
+mode = 3
+physics_material_override = SubResource( 5 )
+continuous_cd = true
+contacts_reported = 10
+contact_monitor = true
+script = ExtResource( 1 )
+
+[node name="bounce_plate3" type="RigidBody" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.977918, -0.208987, 0, 0.208987, 0.977918, -2.21578, -13.2906, -8.68044 )
+mode = 3
+physics_material_override = SubResource( 5 )
+continuous_cd = true
+contacts_reported = 10
+contact_monitor = true
+script = ExtResource( 1 )
+
+[node name="bounce_plate2" type="RigidBody" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, -0.997551, -0.0699477, 0, 0.0699477, -0.997551, -0.0268073, -2.79484, 2.517 )
+mode = 3
+physics_material_override = SubResource( 5 )
+continuous_cd = true
+contacts_reported = 10
+contact_monitor = true
+script = ExtResource( 1 )
+
+[node name="MiniBoard" type="StaticBody" parent="." instance=ExtResource( 4 )]
+transform = Transform( 0.96931, 0.00742699, -0.24573, -0.00766192, 0.999971, -1.14172e-10, 0.245723, 0.00188277, 0.969338, 4.82363, -8.48763, 3.12598 )
+
+[connection signal="body_entered" from="bounce_plate" to="bounce_plate" method="_on_BouncePlate_body_entered"]
+[connection signal="body_entered" from="bounce_plate3" to="bounce_plate3" method="_on_BouncePlate_body_entered"]
+[connection signal="body_entered" from="bounce_plate2" to="bounce_plate2" method="_on_BouncePlate_body_entered"]

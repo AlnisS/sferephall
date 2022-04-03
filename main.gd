@@ -40,6 +40,17 @@ func _physics_process(delta):
 	_loop_track_music_if_needed()
 	_slow_motion_if_needed()
 	last_mouse_position = mouse_position
+	
+	# cheats for development
+	if Input.is_action_pressed("ui_down"):
+		$Ball.add_central_force(Vector3(10, 0, 0))
+	if Input.is_action_pressed("ui_up"):
+		$Ball.add_central_force(Vector3(-10, 0, 0))
+	if Input.is_action_pressed("ui_left"):
+		$Ball.add_central_force(Vector3(0, 0, 10))
+	if Input.is_action_pressed("ui_right"):
+		$Ball.add_central_force(Vector3(0, 0, -10))
+	
 
 
 
