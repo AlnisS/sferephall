@@ -43,6 +43,8 @@ func _physics_process(delta):
 	$BottomBar/ButtonBarrier.rect_rotation = sin(rot_phase + PI) * 2
 	$BottomBar/ButtonSlowMotion.rect_rotation = sin(rot_phase) * 2
 	
+	$GameOverLabel.rect_rotation = sin(rot_phase) * 2
+	
 	$Title.rect_rotation = sin(rot_phase) * 1
 	
 	var scale_1 = 1 + sin(rot_phase) * 0.05
@@ -112,6 +114,10 @@ func _game_actions(delta):
 	
 	$TimeLabel.text = "Time: " + _time_to_text(survival_time)
 	$ItemsLabel.text = "Money: " + _money_to_text(money)
+	
+	if $Ball.get_global_transform().origin.y \
+			< $GameOverHeight.get_global_transform().origin.y:
+		game_over()
 	
 	last_mouse_position = mouse_position
 	
@@ -256,6 +262,13 @@ func _slow_motion_if_needed():
 	$TrackMusic.pitch_scale = Engine.time_scale
 
 
+func game_over():
+	$TrackMusic.stop()
+	$GameOverLabel.show()
+	$ButtonReturn.show()
+	do_game = false
+	$BottomBar.hide()
+
 
 ### UI BUTTON CONNECTORS ###
 func _on_ButtonExplosive_button_down():
@@ -299,13 +312,15 @@ func _on_ButtonSlowMotion_button_down():
 func _on_ButtonSlowMotion_button_up():
 	engine_time_scale_target = 1.0
 
-
 func _on_ButtonPlay_pressed():
 	$AnimationPlayer.play("setup_game")
 
 func _on_ButtonHelp_pressed():
 	$InstructionsDialog.show()
 
-
 func _on_ButtonCredits_pressed():
 	$CreditsDialog.show()
+
+
+func _on_ButtonReturn_pressed():
+	get_tree().reload_current_scene()
