@@ -113,10 +113,6 @@ func _loop_track_music_if_needed():
 
 
 func _slow_motion_if_needed():
-#	if Input.is_action_pressed("slow_motion"):
-#		Engine.time_scale = lerp(Engine.time_scale, 0.5, 0.2)
-#	else:
-#		Engine.time_scale = lerp(Engine.time_scale, 1.0, 0.2)
 	Engine.time_scale = lerp(Engine.time_scale, engine_time_scale_target, 0.2)
 	
 	$TrackMusic.pitch_scale = Engine.time_scale

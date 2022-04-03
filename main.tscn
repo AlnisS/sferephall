@@ -1,9 +1,11 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://main.gd" type="Script" id=1]
 [ext_resource path="res://objects/mini_plank/mini_plank.tscn" type="PackedScene" id=2]
 [ext_resource path="res://objects/bounce_plate/bounce_plate.tscn" type="PackedScene" id=3]
 [ext_resource path="res://music/sferephall-track.mp3" type="AudioStream" id=4]
+[ext_resource path="res://objects/spinning_platform/spinning_platform.tscn" type="PackedScene" id=5]
+[ext_resource path="res://objects/mini_board/mini_board.tscn" type="PackedScene" id=6]
 
 [sub_resource type="SpatialMaterial" id=1]
 metallic = 1.0
@@ -217,37 +219,40 @@ spot_angle = 19.7683
 [node name="Level" type="Spatial" parent="."]
 
 [node name="MiniPlank" parent="Level" instance=ExtResource( 2 )]
-transform = Transform( 0.996195, 0.084217, 0.0224415, -0.0871557, 0.962605, 0.256507, 1.86265e-09, -0.257487, 0.966282, 0, -6.69503, 5 )
+transform = Transform( 0.996195, 0.084217, 0.0224415, -0.0871557, 0.962605, 0.256507, 1.86265e-09, -0.257487, 0.966282, 0, -7.2518, 5 )
 
 [node name="MiniPlank2" parent="Level" instance=ExtResource( 2 )]
-transform = Transform( -0.996195, -0.0859081, -0.0146939, 0.0871557, -0.981935, -0.167951, -1.05239e-07, -0.168593, 0.985686, 0, -6.69503, 0.817782 )
+transform = Transform( -0.996195, -0.0859081, -0.0146939, 0.0871557, -0.981935, -0.167951, -1.05239e-07, -0.168593, 0.985686, 0, -7.2518, 0.817782 )
 
 [node name="MiniPlank3" parent="Level" instance=ExtResource( 2 )]
-transform = Transform( -0.118892, -0.0947068, -0.98838, 0.0849667, 0.990819, -0.105161, 0.989265, -0.0964823, -0.109754, 7.31386, -8.13587, 3.15511 )
+transform = Transform( -0.118892, -0.0947068, -0.98838, 0.0849667, 0.990819, -0.105161, 0.989265, -0.0964823, -0.109754, 7.31386, -9.80029, 3.15511 )
 
 [node name="MiniPlank4" parent="Level" instance=ExtResource( 2 )]
-transform = Transform( 0.118893, 0.0783624, 0.98981, -0.0849667, 0.994027, -0.0684904, -0.989265, -0.0759579, 0.124841, 3.16145, -8.21284, 2.66267 )
+transform = Transform( 0.118893, 0.0783624, 0.98981, -0.0849667, 0.994027, -0.0684904, -0.989265, -0.0759579, 0.124841, 3.16145, -9.87726, 2.66267 )
 
 [node name="MiniPlank5" parent="Level" instance=ExtResource( 2 )]
-transform = Transform( 0.621758, 0.135197, 0.771452, 0.0754075, -0.990746, 0.112853, 0.779571, -0.0119938, -0.626199, 7.24224, -9.81534, -2.31673 )
+transform = Transform( 0.621758, 0.135197, 0.771452, 0.0754075, -0.990746, 0.112853, 0.779571, -0.0119938, -0.626199, 7.24224, -11.4798, -2.31673 )
 
 [node name="MiniPlank6" parent="Level" instance=ExtResource( 2 )]
-transform = Transform( 0.621758, 0.000818413, -0.783209, 0.0754076, 0.995291, 0.0609031, 0.779571, -0.0969269, 0.618769, 3.97886, -9.92439, 0.296574 )
+transform = Transform( 0.621758, 0.000818413, -0.783209, 0.0754076, 0.995291, 0.0609031, 0.779571, -0.0969269, 0.618769, 3.97886, -11.5888, 0.296574 )
 
 [node name="MiniPlank7" parent="Level" instance=ExtResource( 2 )]
-transform = Transform( -0.621758, -0.135197, 0.771452, -0.0754076, 0.990746, 0.112853, -0.779571, 0.0119937, -0.626199, 3.40432, -10.4742, -6.96819 )
+transform = Transform( -0.621758, -0.135197, 0.771452, -0.0754076, 0.990746, 0.112853, -0.779571, 0.0119937, -0.626199, 3.40432, -12.1386, -6.96819 )
 
 [node name="MiniPlank8" parent="Level" instance=ExtResource( 2 )]
-transform = Transform( -0.621758, -0.000818487, -0.783209, -0.0754076, -0.995291, 0.0609032, -0.779571, 0.0969269, 0.618769, 0.140933, -10.5832, -4.35489 )
+transform = Transform( -0.621758, -0.000818487, -0.783209, -0.0754076, -0.995291, 0.0609032, -0.779571, 0.0969269, 0.618769, 0.140933, -12.2476, -4.35489 )
 
 [node name="bounce_plate" parent="Level" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 0.977918, -0.208987, 0, 0.208987, 0.977918, -0.0268073, -5.26218, -0.179804 )
 
 [node name="bounce_plate3" parent="Level" instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 0.977918, -0.208987, 0, 0.208987, 0.977918, -2.21578, -11.6262, -8.68044 )
+transform = Transform( 1, 0, 0, 0, 0.977918, -0.208987, 0, 0.208987, 0.977918, -2.21578, -13.2906, -8.68044 )
 
 [node name="bounce_plate2" parent="Level" instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, -0.999747, 0.0224957, 0, -0.0224957, -0.999747, -0.0268073, -2.79484, 2.517 )
+transform = Transform( 1, 0, 0, 0, -0.997551, -0.0699477, 0, 0.0699477, -0.997551, -0.0268073, -2.79484, 2.517 )
+
+[node name="MiniBoard" parent="Level" instance=ExtResource( 6 )]
+transform = Transform( 0.96931, 0.00742699, -0.24573, -0.00766192, 0.999971, -1.14172e-10, 0.245723, 0.00188277, 0.969338, 4.82363, -8.48763, 3.12598 )
 
 [node name="CameraPivot" type="Spatial" parent="."]
 
@@ -371,6 +376,9 @@ custom_styles/hover = SubResource( 19 )
 custom_styles/pressed = SubResource( 20 )
 custom_styles/normal = SubResource( 21 )
 text = "SLO-MO"
+
+[node name="SpinningPlatform" parent="." instance=ExtResource( 5 )]
+transform = Transform( 0.987309, -0.103949, -0.120063, 0.0947707, 0.992296, -0.0797956, 0.127433, 0.0674045, 0.989554, 6.00635, -9.99242, -3.91805 )
 
 [connection signal="button_down" from="BottomBar/ButtonExplosive" to="." method="_on_ButtonExplosive_button_down"]
 [connection signal="button_down" from="BottomBar/ButtonAntigrav" to="." method="_on_ButtonAntigrav_button_down"]

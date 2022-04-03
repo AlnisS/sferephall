@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://textures/cloth_texture.jpg" type="Texture" id=1]
+[ext_resource path="res://objects/spinning_platform/spinning_platform.gd" type="Script" id=2]
+
+[sub_resource type="PhysicsMaterial" id=3]
+rough = true
+bounce = 0.5
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_texture = ExtResource( 1 )
+uv1_scale = Vector3( 0.1, 0.1, 0.1 )
+uv1_offset = Vector3( 0.342, 0.021, 0.307 )
+uv1_triplanar = true
+
+[sub_resource type="CylinderShape" id=2]
+radius = 3.0
+height = 0.4
+
+[node name="SpinningPlatform" type="RigidBody"]
+mode = 3
+physics_material_override = SubResource( 3 )
+script = ExtResource( 2 )
+
+[node name="CSGCylinder" type="CSGCylinder" parent="."]
+radius = 3.0
+height = 0.4
+sides = 64
+material = SubResource( 1 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+shape = SubResource( 2 )
