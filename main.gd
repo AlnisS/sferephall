@@ -1,5 +1,6 @@
 extends Spatial
 
+var explosion = preload("res://items/explosion/explosion.tscn")
 var temporary_barrier = preload("res://items/temporary_barrier/temporary_barrier.tscn")
 var damping_area = preload("res://items/damping_area/damping_area.tscn")
 var anti_gravity_area = preload("res://items/anti_gravity_area/anti_gravity_area.tscn")
@@ -132,7 +133,7 @@ func _slow_motion_if_needed():
 
 ### UI BUTTON CONNECTORS ###
 func _on_ButtonExplosive_button_down():
-	active_item = null
+	active_item = explosion
 
 func _on_ButtonAntigrav_button_down():
 	active_item = anti_gravity_area
