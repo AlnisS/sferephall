@@ -878,6 +878,30 @@ All textures, sounds, models, designs, etc. are original and were created in the
 * The MIDI Sound Font for the music (MuseScore 3 sound font)"
 dialog_autowrap = true
 
+[node name="ItemsLabel" type="Label" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -217.0
+margin_top = -56.0
+margin_right = -10.0
+margin_bottom = -1.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 25 )
+text = "Money: $10.00"
+
+[node name="TimeLabel" type="Label" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -226.0
+margin_top = 1.0
+margin_right = -11.0
+margin_bottom = 56.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 25 )
+text = "Time: 00:00.00"
+
 [connection signal="button_down" from="BottomBar/ButtonExplosive" to="." method="_on_ButtonExplosive_button_down"]
 [connection signal="button_down" from="BottomBar/ButtonAntigrav" to="." method="_on_ButtonAntigrav_button_down"]
 [connection signal="button_down" from="BottomBar/ButtonDampen" to="." method="_on_ButtonDampen_button_down"]

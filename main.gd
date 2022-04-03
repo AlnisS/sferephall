@@ -21,6 +21,8 @@ var engine_time_scale_target = 1.0
 
 var time = 0.0
 
+var survival_time = 0.0
+
 
 func _ready():
 	pass
@@ -57,6 +59,8 @@ func _physics_process(delta):
 
 
 func _game_actions(delta):
+	survival_time += delta
+	
 	mouse_position = get_viewport().get_mouse_position()
 	
 	# camera movement
@@ -92,6 +96,9 @@ func _game_actions(delta):
 	$SpotLightPivot.translation = $Ball.get_global_transform().origin
 	_loop_track_music_if_needed()
 	_slow_motion_if_needed()
+	
+	$TimeLabel.text = "Time: " + _time_to_text(survival_time)
+	
 	last_mouse_position = mouse_position
 	
 	# cheats for development
@@ -188,6 +195,32 @@ func _loop_track_music_if_needed():
 	if music_position > 35.2:
 		music_position -= 35.2
 		$TrackMusic.seek(music_position)
+
+
+func _time_to_text(in_time: float) -> String:
+	var minutes = floor(in_time / 60)
+	var seconds = floor(in_time - minutes * 60)
+	var decimal = floor(100 * (in_time - minutes * 60 - seconds))
+	
+	var result = ""
+	
+	if minutes < 10:
+		result += "0"
+	result += str(minutes)
+	
+	result += ":"
+	
+	if seconds < 10:
+		result += "0"
+	result += str(seconds)
+	
+	result += "."
+	
+	if decimal < 10:
+		result += "0"
+	result += str(decimal)
+	
+	return result
 
 
 func _slow_motion_if_needed():
