@@ -5,7 +5,7 @@ func _ready():
 	$AnimationPlayer.play("placing")
 
 func move_to_mouse(raycast):
-	var center = raycast.position + raycast.normal * 0.55
+	var center = raycast.position + raycast.normal * 0.25
 	var collider_basis = raycast.collider.get_global_transform().basis
 	look_at_from_position(center, center + collider_basis.x, collider_basis.y)
 
