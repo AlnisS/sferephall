@@ -23,7 +23,8 @@ var time = 0.0
 
 
 func _ready():
-	$AnimationPlayer.play("setup_game")
+	pass
+#	$AnimationPlayer.play("setup_game")
 
 
 func _physics_process(delta):
@@ -37,8 +38,22 @@ func _physics_process(delta):
 	$BottomBar/ButtonBarrier.rect_rotation = sin(rot_phase + PI) * 2
 	$BottomBar/ButtonSlowMotion.rect_rotation = sin(rot_phase) * 2
 	
+	$Title.rect_rotation = sin(rot_phase) * 1
+	
+	var scale_1 = 1 + sin(rot_phase) * 0.05
+	var scale_2 = 1 + sin(rot_phase + PI) * 0.05
+	$ButtonPlay.rect_scale = Vector2(scale_1, scale_2)
+	$ButtonHelp.rect_scale = Vector2(scale_2, scale_1)
+	$ButtonCredits.rect_scale = Vector2(scale_1, scale_2)
+	
+	
+	_loop_menu_music_if_needed()
+	
 	if do_game:
 		_game_actions(delta)
+	else:
+		$CameraPivot.rotate_y(cos(rot_phase) * 0.4 * delta)
+#		rotation_degrees = Vector3(0, sin(rot_phase) * 2, 0)
 
 
 func _game_actions(delta):
@@ -139,6 +154,12 @@ func _find_mouse_in_world(mouse_position) -> Dictionary:
 	return result
 
 
+func _loop_menu_music_if_needed():
+	var music_position: float = $MenuMusic.get_playback_position()
+	if music_position > 12.8:
+		music_position -= 12.8
+		$MenuMusic.seek(music_position)
+
 func _loop_track_music_if_needed():
 	var music_position: float = $TrackMusic.get_playback_position()
 	if music_position > 35.2:
@@ -171,3 +192,7 @@ func _on_ButtonSlowMotion_button_down():
 
 func _on_ButtonSlowMotion_button_up():
 	engine_time_scale_target = 1.0
+
+
+func _on_ButtonPlay_pressed():
+	$AnimationPlayer.play("setup_game")

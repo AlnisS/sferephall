@@ -1,8 +1,13 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://main.gd" type="Script" id=1]
 [ext_resource path="res://maps/marble_run_towers/marble_run_towers.tscn" type="PackedScene" id=2]
+[ext_resource path="res://font/PermanentMarker-Regular.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://music/sferephall-track.mp3" type="AudioStream" id=4]
+[ext_resource path="res://music/sferephall-menu.mp3" type="AudioStream" id=5]
+[ext_resource path="res://ui/menu_regular_button.tres" type="StyleBox" id=6]
+[ext_resource path="res://ui/menu_pressed_button.tres" type="StyleBox" id=7]
+[ext_resource path="res://ui/menu_hover_button.tres" type="StyleBox" id=8]
 
 [sub_resource type="SpatialMaterial" id=1]
 metallic = 1.0
@@ -292,6 +297,98 @@ tracks/9/keys = {
 "update": 0,
 "values": [ false ]
 }
+tracks/10/type = "value"
+tracks/10/path = NodePath("MenuMusic:playing")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/11/type = "bezier"
+tracks/11/path = NodePath("Title:anchor_left")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"points": PoolRealArray( 0.094, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/12/type = "bezier"
+tracks/12/path = NodePath("Title:anchor_right")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"points": PoolRealArray( 0.094, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/13/type = "bezier"
+tracks/13/path = NodePath("ButtonPlay:anchor_left")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"points": PoolRealArray( 0.139, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/14/type = "bezier"
+tracks/14/path = NodePath("ButtonPlay:anchor_right")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"points": PoolRealArray( 0.139, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/15/type = "bezier"
+tracks/15/path = NodePath("ButtonHelp:anchor_left")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"points": PoolRealArray( 0.16, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/16/type = "bezier"
+tracks/16/path = NodePath("ButtonHelp:anchor_right")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"points": PoolRealArray( 0.16, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/17/type = "bezier"
+tracks/17/path = NodePath("ButtonCredits:anchor_left")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
+"points": PoolRealArray( 0.159, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/18/type = "bezier"
+tracks/18/path = NodePath("ButtonCredits:anchor_right")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/keys = {
+"points": PoolRealArray( 0.159, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
 
 [sub_resource type="Animation" id=23]
 resource_name = "setup_game"
@@ -382,6 +479,106 @@ tracks/7/keys = {
 "update": 1,
 "values": [ true ]
 }
+tracks/8/type = "value"
+tracks/8/path = NodePath("MenuMusic:playing")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/9/type = "bezier"
+tracks/9/path = NodePath("Title:anchor_left")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"points": PoolRealArray( 0.258, -0.25, 0, 0.25, 0, -0.5, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 2 )
+}
+tracks/10/type = "bezier"
+tracks/10/path = NodePath("Title:anchor_right")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"points": PoolRealArray( 0.094, -0.25, 0, 0.25, 0, -0.5, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 2 )
+}
+tracks/11/type = "bezier"
+tracks/11/path = NodePath("ButtonPlay:anchor_left")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"points": PoolRealArray( 0.139, -0.25, 0, 0.25, 0, -0.5, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 2 )
+}
+tracks/12/type = "bezier"
+tracks/12/path = NodePath("ButtonPlay:anchor_right")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"points": PoolRealArray( 0.139, -0.25, 0, 0.25, 0, -0.5, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 2 )
+}
+tracks/13/type = "bezier"
+tracks/13/path = NodePath("ButtonHelp:anchor_left")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"points": PoolRealArray( 0.16, -0.25, 0, 0.25, 0, -0.5, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 2 )
+}
+tracks/14/type = "bezier"
+tracks/14/path = NodePath("ButtonHelp:anchor_right")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"points": PoolRealArray( 0.16, -0.25, 0, 0.25, 0, -0.5, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 2 )
+}
+tracks/15/type = "bezier"
+tracks/15/path = NodePath("ButtonCredits:anchor_left")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"points": PoolRealArray( 0.159, -0.25, 0, 0.25, 0, -0.5, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 2 )
+}
+tracks/16/type = "bezier"
+tracks/16/path = NodePath("ButtonCredits:anchor_right")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"points": PoolRealArray( 0.159, -0.25, 0, 0.25, 0, -0.5, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 2 )
+}
+
+[sub_resource type="DynamicFont" id=24]
+size = 80
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=25]
+size = 40
+font_data = ExtResource( 3 )
 
 [node name="Main" type="Spatial"]
 script = ExtResource( 1 )
@@ -427,6 +624,11 @@ fov = 30.0
 stream = ExtResource( 4 )
 bus = "Music"
 
+[node name="MenuMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+autoplay = true
+bus = "Music"
+
 [node name="BottomBar" type="HBoxContainer" parent="."]
 anchor_left = 0.5
 anchor_top = 1.15
@@ -440,6 +642,7 @@ margin_right = 216.0
 margin_right = 80.0
 margin_bottom = 80.0
 rect_min_size = Vector2( 80, 80 )
+rect_pivot_offset = Vector2( 40, 40 )
 custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
 custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -460,6 +663,7 @@ margin_left = 88.0
 margin_right = 168.0
 margin_bottom = 80.0
 rect_min_size = Vector2( 80, 80 )
+rect_pivot_offset = Vector2( 40, 40 )
 custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
 custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -480,6 +684,7 @@ margin_left = 176.0
 margin_right = 256.0
 margin_bottom = 80.0
 rect_min_size = Vector2( 80, 80 )
+rect_pivot_offset = Vector2( 40, 40 )
 custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
 custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -500,6 +705,7 @@ margin_left = 264.0
 margin_right = 344.0
 margin_bottom = 80.0
 rect_min_size = Vector2( 80, 80 )
+rect_pivot_offset = Vector2( 40, 40 )
 custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
 custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -520,6 +726,7 @@ margin_left = 352.0
 margin_right = 432.0
 margin_bottom = 80.0
 rect_min_size = Vector2( 80, 80 )
+rect_pivot_offset = Vector2( 40, 40 )
 custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
 custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -536,9 +743,88 @@ text = "SLO-MO"
 anims/RESET = SubResource( 22 )
 anims/setup_game = SubResource( 23 )
 
+[node name="Title" type="RichTextLabel" parent="."]
+anchor_left = 0.094
+anchor_top = 0.09
+anchor_right = 0.094
+anchor_bottom = 0.09
+margin_left = -60.256
+margin_top = -42.0
+margin_right = 396.744
+margin_bottom = 88.0
+rect_pivot_offset = Vector2( 225, 65 )
+custom_fonts/normal_font = SubResource( 24 )
+bbcode_enabled = true
+bbcode_text = "[color=#FFA273]Sfere[/color][color=#CF7CB9]Phall[/color]"
+text = "SferePhall"
+
+[node name="ButtonPlay" type="Button" parent="."]
+anchor_left = 0.139
+anchor_top = 0.343
+anchor_right = 0.139
+anchor_bottom = 0.343
+margin_left = -51.336
+margin_top = -32.8
+margin_right = 51.664
+margin_bottom = 33.2
+rect_pivot_offset = Vector2( 50, 33 )
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 25 )
+custom_styles/hover = ExtResource( 8 )
+custom_styles/pressed = ExtResource( 7 )
+custom_styles/normal = ExtResource( 6 )
+text = "Play!"
+
+[node name="ButtonHelp" type="Button" parent="."]
+anchor_left = 0.16
+anchor_top = 0.557
+anchor_right = 0.16
+anchor_bottom = 0.557
+margin_left = -53.84
+margin_top = -33.2
+margin_right = 54.16
+margin_bottom = 32.8
+rect_pivot_offset = Vector2( 55, 33 )
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 25 )
+custom_styles/hover = ExtResource( 8 )
+custom_styles/pressed = ExtResource( 7 )
+custom_styles/normal = ExtResource( 6 )
+text = "Help!"
+
+[node name="ButtonCredits" type="Button" parent="."]
+anchor_left = 0.159
+anchor_top = 0.765
+anchor_right = 0.159
+anchor_bottom = 0.765
+margin_left = -77.816
+margin_top = -33.0
+margin_right = 78.184
+margin_bottom = 33.0
+rect_pivot_offset = Vector2( 77, 33 )
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 25 )
+custom_styles/hover = ExtResource( 8 )
+custom_styles/pressed = ExtResource( 7 )
+custom_styles/normal = ExtResource( 6 )
+text = "Credits!"
+
 [connection signal="button_down" from="BottomBar/ButtonExplosive" to="." method="_on_ButtonExplosive_button_down"]
 [connection signal="button_down" from="BottomBar/ButtonAntigrav" to="." method="_on_ButtonAntigrav_button_down"]
 [connection signal="button_down" from="BottomBar/ButtonDampen" to="." method="_on_ButtonDampen_button_down"]
 [connection signal="button_down" from="BottomBar/ButtonBarrier" to="." method="_on_ButtonBarrier_button_down"]
 [connection signal="button_down" from="BottomBar/ButtonSlowMotion" to="." method="_on_ButtonSlowMotion_button_down"]
 [connection signal="button_up" from="BottomBar/ButtonSlowMotion" to="." method="_on_ButtonSlowMotion_button_up"]
+[connection signal="pressed" from="ButtonPlay" to="." method="_on_ButtonPlay_pressed"]
