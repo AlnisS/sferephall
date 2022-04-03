@@ -5,8 +5,9 @@ var damping_area = preload("res://items/damping_area/damping_area.tscn")
 var anti_gravity_area = preload("res://items/anti_gravity_area/anti_gravity_area.tscn")
 
 #var active_item = temporary_barrier
-var active_item = damping_area
+#var active_item = damping_area
 #var active_item = anti_gravity_area
+var active_item = null
 
 var item_instance = null
 
@@ -24,12 +25,15 @@ func _physics_process(delta):
 	
 	# item placement
 	var mouse_in_world = _find_mouse_in_world(mouse_position)
-	if mouse_in_world:
+	if mouse_in_world and active_item:
 		_create_and_move_item(mouse_in_world)
-		if Input.is_action_just_pressed("place"):
+		if Input.is_action_just_released("place"):
 			_place_item()
 	else:
 		_remove_placing_visual()
+	
+	if not Input.is_action_pressed("place"):
+		active_item = null
 	
 	# misc housekeeping
 	$SpotLightPivot.translation = $Ball.get_global_transform().origin
@@ -78,6 +82,7 @@ func _create_and_move_item(raycast):
 func _place_item():
 	item_instance.place()
 	item_instance = null  # clear our reference so we can add more items
+	active_item = null
 
 
 func _remove_placing_visual():
@@ -117,25 +122,22 @@ func _slow_motion_if_needed():
 	$TrackMusic.pitch_scale = Engine.time_scale
 
 
-func _on_ButtonExplosive_button_down():
-	pass # Replace with function body.
 
+### UI BUTTON CONNECTORS ###
+func _on_ButtonExplosive_button_down():
+	active_item = null
 
 func _on_ButtonAntigrav_button_down():
-	pass # Replace with function body.
-
+	active_item = anti_gravity_area
 
 func _on_ButtonDampen_button_down():
-	pass # Replace with function body.
-
+	active_item = damping_area
 
 func _on_ButtonBarrier_button_down():
-	pass # Replace with function body.
-
+	active_item = temporary_barrier
 
 func _on_ButtonSlowMotion_button_down():
 	engine_time_scale_target = 0.5
-
 
 func _on_ButtonSlowMotion_button_up():
 	engine_time_scale_target = 1.0
