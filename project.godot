@@ -24,6 +24,10 @@ config/name="SferePhall"
 run/main_scene="res://main.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+ScoreTracker="*res://score_tracker.gd"
+
 [gdnative]
 
 singletons=[ "res://addons/godot-git-plugin/git_api.gdnlib" ]

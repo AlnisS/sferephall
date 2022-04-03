@@ -28,7 +28,8 @@ var money = 10.00
 var temporary_hold = 0.0
 
 func _ready():
-	pass
+	$LastTimeLabel.text = "Last time: " + _time_to_text(ScoreTracker.last_time)
+	$BestTimeLabel.text = "Best time: " + _time_to_text(ScoreTracker.best_time)
 #	$AnimationPlayer.play("setup_game")
 
 
@@ -268,6 +269,10 @@ func game_over():
 	$ButtonReturn.show()
 	do_game = false
 	$BottomBar.hide()
+	ScoreTracker.last_time = survival_time
+	if survival_time > ScoreTracker.best_time:
+		ScoreTracker.best_time = survival_time
+	$MarbleRunTowers.hide()
 
 
 ### UI BUTTON CONNECTORS ###
