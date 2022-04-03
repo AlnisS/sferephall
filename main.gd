@@ -66,11 +66,24 @@ func _game_actions(delta):
 	# item placement
 	var mouse_in_world = _find_mouse_in_world(mouse_position)
 	if mouse_in_world and active_item:
+		$Ball/BlockZone.show()
 		_create_and_move_item(mouse_in_world)
-		if Input.is_action_just_released("place"):
-			_place_item()
+		var blocked = false
+		if active_item == explosion:
+			blocked = _is_point_blocked(mouse_in_world.position)
+		else:
+			blocked = _is_point_blocked(mouse_in_world.position + mouse_in_world.normal)
+		
+		if blocked:
+			$Ball/BlockZone.material.set_shader_param("color", Color(255, 0, 0, 0.2))
+			if Input.is_action_just_released("place"):
+				_cancel_item()
+		else:
+			$Ball/BlockZone.material.set_shader_param("color", Color(0, 255, 255, 0.2))
+			if Input.is_action_just_released("place"):
+				_place_item()
 	else:
-		_remove_placing_visual()
+		_cancel_item()
 	
 	if not Input.is_action_pressed("place"):
 		active_item = null
@@ -134,6 +147,11 @@ func _place_item():
 	active_item = null
 
 
+func _cancel_item():
+	$Ball/BlockZone.hide()
+	_remove_placing_visual()
+
+
 func _remove_placing_visual():
 	if item_instance:
 		item_instance.queue_free()
@@ -152,6 +170,11 @@ func _find_mouse_in_world(mouse_position) -> Dictionary:
 	var space_state = get_world().get_direct_space_state()
 	var result = space_state.intersect_ray(from, to)
 	return result
+
+
+func _is_point_blocked(point: Vector3):
+	return ($Ball/BlockZone.get_global_transform().origin.distance_to(point)
+			< $Ball/BlockZone.radius)
 
 
 func _loop_menu_music_if_needed():
