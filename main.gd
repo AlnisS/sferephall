@@ -13,6 +13,8 @@ var item_instance = null
 var mouse_position: Vector2 = Vector2.ZERO
 var last_mouse_position: Vector2 = Vector2.ZERO
 
+var engine_time_scale_target = 1.0
+
 func _physics_process(delta):
 	mouse_position = get_viewport().get_mouse_position()
 	
@@ -106,9 +108,34 @@ func _loop_track_music_if_needed():
 
 
 func _slow_motion_if_needed():
-	if Input.is_action_pressed("slow_motion"):
-		Engine.time_scale = lerp(Engine.time_scale, 0.5, 0.2)
-	else:
-		Engine.time_scale = lerp(Engine.time_scale, 1.0, 0.2)
+#	if Input.is_action_pressed("slow_motion"):
+#		Engine.time_scale = lerp(Engine.time_scale, 0.5, 0.2)
+#	else:
+#		Engine.time_scale = lerp(Engine.time_scale, 1.0, 0.2)
+	Engine.time_scale = lerp(Engine.time_scale, engine_time_scale_target, 0.2)
 	
 	$TrackMusic.pitch_scale = Engine.time_scale
+
+
+func _on_ButtonExplosive_button_down():
+	pass # Replace with function body.
+
+
+func _on_ButtonAntigrav_button_down():
+	pass # Replace with function body.
+
+
+func _on_ButtonDampen_button_down():
+	pass # Replace with function body.
+
+
+func _on_ButtonBarrier_button_down():
+	pass # Replace with function body.
+
+
+func _on_ButtonSlowMotion_button_down():
+	engine_time_scale_target = 0.5
+
+
+func _on_ButtonSlowMotion_button_up():
+	engine_time_scale_target = 1.0
