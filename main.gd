@@ -196,3 +196,10 @@ func _on_ButtonSlowMotion_button_up():
 
 func _on_ButtonPlay_pressed():
 	$AnimationPlayer.play("setup_game")
+
+func _on_ButtonHelp_pressed():
+	$InstructionsDialog.show()
+
+
+func _on_ButtonCredits_pressed():
+	$CreditsDialog.show()

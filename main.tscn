@@ -2,7 +2,7 @@
 
 [ext_resource path="res://main.gd" type="Script" id=1]
 [ext_resource path="res://maps/marble_run_towers/marble_run_towers.tscn" type="PackedScene" id=2]
-[ext_resource path="res://font/PermanentMarker-Regular.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://font/PatrickHand-Regular.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://music/sferephall-track.mp3" type="AudioStream" id=4]
 [ext_resource path="res://music/sferephall-menu.mp3" type="AudioStream" id=5]
 [ext_resource path="res://ui/menu_regular_button.tres" type="StyleBox" id=6]
@@ -573,7 +573,7 @@ tracks/16/keys = {
 }
 
 [sub_resource type="DynamicFont" id=24]
-size = 80
+size = 100
 font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=25]
@@ -751,7 +751,7 @@ anchor_bottom = 0.09
 margin_left = -60.256
 margin_top = -42.0
 margin_right = 396.744
-margin_bottom = 88.0
+margin_bottom = 96.0
 rect_pivot_offset = Vector2( 225, 65 )
 custom_fonts/normal_font = SubResource( 24 )
 bbcode_enabled = true
@@ -821,6 +821,53 @@ custom_styles/pressed = ExtResource( 7 )
 custom_styles/normal = ExtResource( 6 )
 text = "Credits!"
 
+[node name="InstructionsDialog" type="AcceptDialog" parent="."]
+visible = true
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -334.0
+margin_top = -138.0
+margin_right = -10.0
+margin_bottom = 141.0
+window_title = "Instructions!"
+dialog_text = "Keep the Sfere from Phalling as long as possible by drag-n-dropping obstacles in its way from your inventory at the bottom of the screen.
+
+EXPLOSIVE: give the ball a percussive kick!
+ANTIGRAV: gravity goes up! Don't ask how...
+DAMPEN: it's like 3D molasses, very sticky! 
+BARRIER: wall stolen from a construction site
+SLO-MO: bullet time!
+
+Be mindful of how many items you have left!
+
+Rotate the view by click-and-dragging with your right mouse button."
+dialog_autowrap = true
+
+[node name="CreditsDialog" type="AcceptDialog" parent="."]
+visible = true
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -162.5
+margin_top = -139.5
+margin_right = 162.5
+margin_bottom = 139.5
+window_title = "Credits!"
+dialog_text = "Created by Alnis Smidchens for Ludum Dare 50.
+
+Check out my website: https://alnis.dev
+Follow me: @auxiliarymoose
+Email me: contact@alnis.dev
+
+All textures, sounds, models, designs, etc. are original and were created in the 48 hours of the compo category, with the following exceptions:
+
+* The menu font (Patrick Hand by Patrick Wagesreiter, via Google Fonts)
+* The MIDI Sound Font for the music (MuseScore 3 sound font)"
+dialog_autowrap = true
+
 [connection signal="button_down" from="BottomBar/ButtonExplosive" to="." method="_on_ButtonExplosive_button_down"]
 [connection signal="button_down" from="BottomBar/ButtonAntigrav" to="." method="_on_ButtonAntigrav_button_down"]
 [connection signal="button_down" from="BottomBar/ButtonDampen" to="." method="_on_ButtonDampen_button_down"]
@@ -828,3 +875,5 @@ text = "Credits!"
 [connection signal="button_down" from="BottomBar/ButtonSlowMotion" to="." method="_on_ButtonSlowMotion_button_down"]
 [connection signal="button_up" from="BottomBar/ButtonSlowMotion" to="." method="_on_ButtonSlowMotion_button_up"]
 [connection signal="pressed" from="ButtonPlay" to="." method="_on_ButtonPlay_pressed"]
+[connection signal="pressed" from="ButtonHelp" to="." method="_on_ButtonHelp_pressed"]
+[connection signal="pressed" from="ButtonCredits" to="." method="_on_ButtonCredits_pressed"]
