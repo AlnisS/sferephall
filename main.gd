@@ -5,8 +5,8 @@ var damping_area = preload("res://items/damping_area/damping_area.tscn")
 var anti_gravity_area = preload("res://items/anti_gravity_area/anti_gravity_area.tscn")
 
 #var active_item = temporary_barrier
-#var active_item = damping_area
-var active_item = anti_gravity_area
+var active_item = damping_area
+#var active_item = anti_gravity_area
 
 var item_instance = null
 
@@ -17,7 +17,7 @@ func _physics_process(delta):
 	mouse_position = get_viewport().get_mouse_position()
 	
 	# camera movement
-	_move_camera(Vector3(0, delta, 0))
+	_move_camera(Vector3(delta, delta, delta))
 	_rotate_camera()
 	
 	# item placement
@@ -32,14 +32,8 @@ func _physics_process(delta):
 	# misc housekeeping
 	$SpotLightPivot.translation = $Ball.get_global_transform().origin
 	_loop_track_music_if_needed()
+	_slow_motion_if_needed()
 	last_mouse_position = mouse_position
-	
-	if Input.is_action_pressed("slow_motion"):
-		Engine.time_scale = lerp(Engine.time_scale, 0.5, 0.2)
-	else:
-		Engine.time_scale = lerp(Engine.time_scale, 1.0, 0.2)
-	
-	$TrackMusic.pitch_scale = Engine.time_scale
 
 
 
@@ -54,9 +48,9 @@ func _move_camera(scale_factors) -> void:
 	# move to match position
 	var movement: Vector3 = (ball_pos - camera_pos) * 2
 	# an extra kick to help it "lead" the ball's velocity
-	movement += $Ball.linear_velocity * 0.3
+	movement += $Ball.linear_velocity * 0.2
 	movement *= scale_factors
-	$CameraPivot.translate(movement)
+	$CameraPivot.translate($CameraPivot.to_local(camera_pos + movement))
 
 
 # rotate camera if right mouse button is dragged
@@ -109,3 +103,12 @@ func _loop_track_music_if_needed():
 	if music_position > 35.2:
 		music_position -= 35.2
 		$TrackMusic.seek(music_position)
+
+
+func _slow_motion_if_needed():
+	if Input.is_action_pressed("slow_motion"):
+		Engine.time_scale = lerp(Engine.time_scale, 0.5, 0.2)
+	else:
+		Engine.time_scale = lerp(Engine.time_scale, 1.0, 0.2)
+	
+	$TrackMusic.pitch_scale = Engine.time_scale

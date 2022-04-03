@@ -2,6 +2,7 @@ extends Area
 
 func _ready():
 	$AnimationPlayer.play("placing")
+	space_override = SPACE_OVERRIDE_DISABLED
 
 func move_to_mouse(raycast):
 	var center = raycast.position + raycast.normal * 1.01
@@ -10,6 +11,7 @@ func move_to_mouse(raycast):
 
 func place():
 	$AnimationPlayer.play("lifespan")
+	space_override = SPACE_OVERRIDE_COMBINE
 
 func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name == "spawn":
@@ -18,3 +20,8 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 		$AnimationPlayer.play("despawn")
 	if anim_name == "despawn":
 		queue_free()
+
+
+func _on_AntiGravityArea_body_entered(body):
+	pass
+#	print(body)
