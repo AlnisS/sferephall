@@ -1,5 +1,7 @@
 extends Spatial
 
+export var do_game = false
+
 var explosion = preload("res://items/explosion/explosion.tscn")
 var temporary_barrier = preload("res://items/temporary_barrier/temporary_barrier.tscn")
 var damping_area = preload("res://items/damping_area/damping_area.tscn")
@@ -17,7 +19,29 @@ var last_mouse_position: Vector2 = Vector2.ZERO
 
 var engine_time_scale_target = 1.0
 
+var time = 0.0
+
+
+func _ready():
+	$AnimationPlayer.play("setup_game")
+
+
 func _physics_process(delta):
+	time += delta
+	
+	var rot_phase = 1 * PI * 2.5 * time
+	
+	$BottomBar/ButtonExplosive.rect_rotation = sin(rot_phase) * 2
+	$BottomBar/ButtonAntigrav.rect_rotation = sin(rot_phase + PI) * 2
+	$BottomBar/ButtonDampen.rect_rotation = sin(rot_phase) * 2
+	$BottomBar/ButtonBarrier.rect_rotation = sin(rot_phase + PI) * 2
+	$BottomBar/ButtonSlowMotion.rect_rotation = sin(rot_phase) * 2
+	
+	if do_game:
+		_game_actions(delta)
+
+
+func _game_actions(delta):
 	mouse_position = get_viewport().get_mouse_position()
 	
 	# camera movement
@@ -51,8 +75,6 @@ func _physics_process(delta):
 		$Ball.add_central_force(Vector3(0, 0, 10))
 	if Input.is_action_pressed("ui_right"):
 		$Ball.add_central_force(Vector3(0, 0, -10))
-	
-
 
 
 ### CAMERA MOVEMENT ###
@@ -109,7 +131,7 @@ func _remove_placing_visual():
 # find where mouse is in world space as a raycast
 func _find_mouse_in_world(mouse_position) -> Dictionary:
 	var ray_length = 1000
-	var camera = $CameraPivot/Camera
+	var camera = $CameraPivot/CameraZero/Camera
 	var from = camera.project_ray_origin(mouse_position)
 	var to = from + camera.project_ray_normal(mouse_position) * ray_length
 	var space_state = get_world().get_direct_space_state()
