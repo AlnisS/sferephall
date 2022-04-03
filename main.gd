@@ -23,6 +23,9 @@ var time = 0.0
 
 var survival_time = 0.0
 
+var money = 10.00
+
+var temporary_hold = 0.0
 
 func _ready():
 	pass
@@ -89,6 +92,16 @@ func _game_actions(delta):
 	else:
 		_cancel_item()
 	
+	if Input.is_action_just_released("place"):
+		money += temporary_hold
+		temporary_hold = 0.0
+	
+	if engine_time_scale_target != 1.0:
+		money -= delta * 0.5
+		if money < 0.0:
+			money = 0.0
+			engine_time_scale_target = 1.0
+	
 	if not Input.is_action_pressed("place"):
 		active_item = null
 	
@@ -98,6 +111,7 @@ func _game_actions(delta):
 	_slow_motion_if_needed()
 	
 	$TimeLabel.text = "Time: " + _time_to_text(survival_time)
+	$ItemsLabel.text = "Money: " + _money_to_text(money)
 	
 	last_mouse_position = mouse_position
 	
@@ -152,6 +166,7 @@ func _place_item():
 	item_instance.place()
 	item_instance = null  # clear our reference so we can add more items
 	active_item = null
+	temporary_hold = 0.0
 
 
 func _cancel_item():
@@ -222,6 +237,18 @@ func _time_to_text(in_time: float) -> String:
 	
 	return result
 
+func _money_to_text(in_money: float) -> String:
+	var dollars = floor(in_money)
+	var cents = floor(100 * (in_money - dollars))
+	
+	var result = "$" + str(dollars) + "."
+	
+	if cents < 10:
+		result += "0"
+	result += str(cents)
+	
+	return result
+
 
 func _slow_motion_if_needed():
 	Engine.time_scale = lerp(Engine.time_scale, engine_time_scale_target, 0.2)
@@ -232,19 +259,42 @@ func _slow_motion_if_needed():
 
 ### UI BUTTON CONNECTORS ###
 func _on_ButtonExplosive_button_down():
-	active_item = explosion
+	if not do_game:
+		return
+	if money >= 1.0:
+		temporary_hold = 1.0
+		money -= 1.0
+		active_item = explosion
 
 func _on_ButtonAntigrav_button_down():
-	active_item = anti_gravity_area
+	if not do_game:
+		return
+	if money >= 1.0:
+		temporary_hold = 1.0
+		money -= 1.0
+		active_item = anti_gravity_area
 
 func _on_ButtonDampen_button_down():
-	active_item = damping_area
+	if not do_game:
+		return
+	if money >= 1.0:
+		temporary_hold = 1.0
+		money -= 1.0
+		active_item = damping_area
 
 func _on_ButtonBarrier_button_down():
-	active_item = temporary_barrier
+	if not do_game:
+		return
+	if money >= 1.0:
+		temporary_hold = 1.0
+		money -= 1.0
+		active_item = temporary_barrier
 
 func _on_ButtonSlowMotion_button_down():
-	engine_time_scale_target = 0.5
+	if not do_game:
+		return
+	if money > 0.0:
+		engine_time_scale_target = 0.5
 
 func _on_ButtonSlowMotion_button_up():
 	engine_time_scale_target = 1.0
