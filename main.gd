@@ -273,6 +273,8 @@ func game_over():
 	if survival_time > ScoreTracker.best_time:
 		ScoreTracker.best_time = survival_time
 	$MarbleRunTowers.hide()
+	$GameOverSound.play()
+	$Ball.hide()
 
 
 ### UI BUTTON CONNECTORS ###

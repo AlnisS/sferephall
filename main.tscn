@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://main.gd" type="Script" id=1]
 [ext_resource path="res://maps/marble_run_towers/marble_run_towers.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://ui/menu_pressed_button.tres" type="StyleBox" id=7]
 [ext_resource path="res://ui/menu_hover_button.tres" type="StyleBox" id=8]
 [ext_resource path="res://items/zone_outline.gdshader" type="Shader" id=9]
+[ext_resource path="res://sfx/game_over.mp3" type="AudioStream" id=10]
 
 [sub_resource type="SpatialMaterial" id=1]
 metallic = 1.0
@@ -1065,6 +1066,9 @@ custom_styles/hover = ExtResource( 8 )
 custom_styles/pressed = ExtResource( 7 )
 custom_styles/normal = ExtResource( 6 )
 text = "Menu"
+
+[node name="GameOverSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
 
 [connection signal="button_down" from="BottomBar/ButtonExplosive" to="." method="_on_ButtonExplosive_button_down"]
 [connection signal="button_down" from="BottomBar/ButtonAntigrav" to="." method="_on_ButtonAntigrav_button_down"]
