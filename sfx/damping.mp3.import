@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/damping.mp3-f35b98bb511d2b8a940aa0fa50ffd4cd.mp3str"
+
+[deps]
+
+source_file="res://sfx/damping.mp3"
+dest_files=[ "res://.import/damping.mp3-f35b98bb511d2b8a940aa0fa50ffd4cd.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
