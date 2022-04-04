@@ -1027,7 +1027,7 @@ custom_fonts/font = SubResource( 25 )
 text = "Best time: 00:00.00"
 
 [node name="GameOverHeight" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -20, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -43.6349, 0 )
 
 [node name="GameOverLabel" type="RichTextLabel" parent="."]
 visible = false

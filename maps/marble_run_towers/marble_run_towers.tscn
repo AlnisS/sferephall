@@ -345,7 +345,7 @@ transform = Transform( 0.987776, -0.155883, 1.49012e-08, 0.153514, 0.972769, -0.
 transform = Transform( 0.953631, 0.300942, -0.00481585, -0.300731, 0.952061, -0.0560446, -0.0122812, 0.0548941, 0.998418, -1.00979, -1.58312, -0.0630274 )
 
 [node name="MiniBoard6" parent="FishLadderUpper/FishLadderUnit2" instance=ExtResource( 1 )]
-transform = Transform( 0.999884, 0.0101148, -0.0113348, -0.00131905, 0.801102, 0.598526, 0.0151342, -0.598442, 0.801023, 0.614048, -3.18659, 0.335378 )
+transform = Transform( 0.999884, 0.0101148, -0.0113348, -0.00131911, 0.801102, 0.598526, 0.0151343, -0.598442, 0.801023, 1.74256, -3.18808, 0.352457 )
 
 [node name="MiniBoard3" parent="FishLadderUpper/FishLadderUnit2" instance=ExtResource( 1 )]
 transform = Transform( 0.102706, -0.994712, 5.96046e-08, 0.994711, 0.102706, 2.98023e-07, -2.98023e-07, 4.47035e-08, 1, -2.61165, 1.64722, -0.100001 )
@@ -358,3 +358,280 @@ transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -0.7
 
 [node name="MiniPlank2" parent="FishLadderUpper/FishLadderUnit2" instance=ExtResource( 4 )]
 transform = Transform( 1, -1.49012e-08, 0, 0, -8.19564e-08, -1, -4.47035e-08, 1, -1.49012e-08, 0.0185175, 3.34767, 0.7 )
+
+[node name="MiddleArea" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.55124, -17.3139, 5.78794 )
+
+[node name="MiddleAreaFunnel" type="Spatial" parent="MiddleArea"]
+
+[node name="MiniPlank" parent="MiddleArea/MiddleAreaFunnel" instance=ExtResource( 4 )]
+transform = Transform( -4.37114e-08, -0.258819, -0.965926, -0.0871557, 0.96225, -0.257834, 0.996195, 0.084186, -0.0225576, 0, -0.522934, -0.0228314 )
+
+[node name="MiniPlank2" parent="MiddleArea/MiddleAreaFunnel" instance=ExtResource( 4 )]
+transform = Transform( -4.37114e-08, 0.258819, -0.965926, -0.0871557, 0.96225, 0.257834, 0.996195, 0.084186, 0.0225575, -4.0002, -0.522934, -0.0228314 )
+
+[node name="MiniPlank9" parent="MiddleArea/MiddleAreaFunnel" instance=ExtResource( 4 )]
+transform = Transform( -4.37114e-08, -0.258819, -0.965926, -0.0871557, 0.96225, -0.257834, 0.996195, 0.084186, -0.0225576, 4.76837e-07, 0, -6 )
+
+[node name="MiniPlank10" parent="MiddleArea/MiddleAreaFunnel" instance=ExtResource( 4 )]
+transform = Transform( -4.37114e-08, 0.258819, -0.965926, -0.0871557, 0.96225, 0.257834, 0.996195, 0.084186, 0.0225575, -4.0002, 0, -6 )
+
+[node name="MiniPlank11" parent="MiddleArea/MiddleAreaFunnel" instance=ExtResource( 4 )]
+transform = Transform( -4.37114e-08, -0.258819, -0.965926, -0.0871557, 0.96225, -0.257834, 0.996195, 0.084186, -0.0225576, 9.53674e-07, 0.522934, -11.9772 )
+
+[node name="MiniPlank12" parent="MiddleArea/MiddleAreaFunnel" instance=ExtResource( 4 )]
+transform = Transform( -4.37114e-08, 0.258819, -0.965926, -0.0871557, 0.96225, 0.257834, 0.996195, 0.084186, 0.0225575, -4.0002, 0.522934, -11.9772 )
+
+[node name="MiniPlank3" parent="MiddleArea/MiddleAreaFunnel" instance=ExtResource( 4 )]
+transform = Transform( -4.37114e-08, -0.258819, -0.965926, 0.0871557, 0.96225, -0.257834, 0.996195, -0.084186, 0.0225575, -4.76837e-07, -0.522936, 6.94846 )
+
+[node name="MiniPlank4" parent="MiddleArea/MiddleAreaFunnel" instance=ExtResource( 4 )]
+transform = Transform( -4.37114e-08, 0.258819, -0.965926, 0.0871557, 0.96225, 0.257834, 0.996195, -0.084186, -0.0225576, -4.0002, -0.522936, 6.94846 )
+
+[node name="MiniPlank5" parent="MiddleArea/MiddleAreaFunnel" instance=ExtResource( 4 )]
+transform = Transform( -4.37114e-08, -0.258819, -0.965926, 0.0871557, 0.96225, -0.257834, 0.996195, -0.084186, 0.0225575, -9.53674e-07, 0, 12.9256 )
+
+[node name="MiniPlank6" parent="MiddleArea/MiddleAreaFunnel" instance=ExtResource( 4 )]
+transform = Transform( -4.37114e-08, 0.258819, -0.965926, 0.0871557, 0.96225, 0.257834, 0.996195, -0.084186, -0.0225576, -4.0002, 0, 12.9256 )
+
+[node name="MiniPlank7" parent="MiddleArea/MiddleAreaFunnel" instance=ExtResource( 4 )]
+transform = Transform( -4.37114e-08, -0.258819, -0.965926, 0.0871557, 0.96225, -0.257834, 0.996195, -0.084186, 0.0225575, -1.43051e-06, 0.522934, 18.9028 )
+
+[node name="MiniPlank8" parent="MiddleArea/MiddleAreaFunnel" instance=ExtResource( 4 )]
+transform = Transform( -4.37114e-08, 0.258819, -0.965926, 0.0871557, 0.96225, 0.257834, 0.996195, -0.084186, -0.0225576, -4.0002, 0.522934, 18.9028 )
+
+[node name="SpinningCascade" type="Spatial" parent="MiddleArea"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.98622, -3.40538, 3.47787 )
+
+[node name="SpinningPlatform" parent="MiddleArea/SpinningCascade" instance=ExtResource( 3 )]
+transform = Transform( 0.999164, 0.0408817, 0, -0.0408696, 0.998869, -0.0242926, -0.000993122, 0.0242723, 0.999705, 0, 0, 0 )
+
+[node name="SpinningPlatform2" parent="MiddleArea/SpinningCascade" instance=ExtResource( 3 )]
+transform = Transform( 0.997494, -0.0704514, -0.00648101, 0.0707489, 0.9933, 0.0913763, 0, -0.0916059, 0.995795, 3.1, -4, 3.1 )
+
+[node name="SpinningPlatform3" parent="MiddleArea/SpinningCascade" instance=ExtResource( 3 )]
+transform = Transform( 0.999351, -0.0360332, 0, 0.0359233, 0.996301, -0.0780589, 0.00281272, 0.0780082, 0.996949, 3.1, -4, -3.1 )
+
+[node name="SpinningPlatform4" parent="MiddleArea/SpinningCascade" instance=ExtResource( 3 )]
+transform = Transform( 0.996826, 0.0796074, 0, -0.0793911, 0.994117, -0.0736734, -0.00586494, 0.0734395, 0.997282, -3.1, -4, -3.1 )
+
+[node name="SpinningPlatform5" parent="MiddleArea/SpinningCascade" instance=ExtResource( 3 )]
+transform = Transform( 0.994721, 0.102116, 0.0101493, -0.102619, 0.989844, 0.0983808, 0, -0.0989029, 0.995097, -3.1, -4, 3.1 )
+
+[node name="Catcher" type="Spatial" parent="MiddleArea"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.11253, -11.487, 4.27641 )
+
+[node name="MiniPlank4" parent="MiddleArea/Catcher" instance=ExtResource( 4 )]
+transform = Transform( -0.996195, -0.0871557, -8.74228e-08, -0.0870886, 0.995427, 0.0392424, -0.00342011, 0.0390931, -0.99923, 5.47532, 1.54276, -2.9652 )
+
+[node name="MiniPlank5" parent="MiddleArea/Catcher" instance=ExtResource( 4 )]
+transform = Transform( -0.996195, -0.0871557, -8.74228e-08, -0.0871044, 0.995608, -0.0343239, 0.00299161, -0.0341933, -0.999411, 5.47532, 1.54276, 1.0348 )
+
+[node name="MiniBoard" parent="MiddleArea/Catcher" instance=ExtResource( 1 )]
+transform = Transform( 0.00681234, 0.33324, 0.942817, 0.0868891, 0.939076, -0.332545, -0.996195, 0.084186, -0.0225576, 1.878, 1.60116, -3.65561 )
+
+[node name="MiniBoard2" parent="MiddleArea/Catcher" instance=ExtResource( 1 )]
+transform = Transform( 0.00727608, 0.976787, -0.214089, 0.0134771, -0.214171, -0.976703, -0.999883, 0.00422129, -0.0147226, 1.27439, 1.75823, -3.43541 )
+
+[node name="MiniBoard3" parent="MiddleArea/Catcher" instance=ExtResource( 1 )]
+transform = Transform( 0.00727608, 0.976787, -0.214089, -0.0288242, -0.213801, -0.976452, -0.999558, 0.0132757, 0.0265994, 1.27439, 1.75823, 1.6754 )
+
+[node name="MiniBoard4" parent="MiddleArea/Catcher" instance=ExtResource( 1 )]
+transform = Transform( -0.00681242, 0.33324, 0.942817, -0.0868891, 0.939076, -0.332545, -0.996195, -0.084186, 0.0225575, 1.878, 1.60116, 1.77304 )
+
+[node name="MiniBoard5" parent="MiddleArea/Catcher" instance=ExtResource( 1 )]
+transform = Transform( -0.984808, 5.19659e-08, -0.173648, -0.173648, -5.06377e-08, 0.984808, 4.23832e-08, 1, 5.88922e-08, 0.512993, 0.217326, -1.17845 )
+
+[node name="MiniBoard6" parent="MiddleArea/Catcher" instance=ExtResource( 1 )]
+transform = Transform( -0.984808, 5.19659e-08, -0.173648, -0.173648, -5.06377e-08, 0.984808, 4.23832e-08, 1, 5.88922e-08, 0.512993, 0.217326, -0.778447 )
+
+[node name="MiniBoard7" parent="MiddleArea/Catcher" instance=ExtResource( 1 )]
+transform = Transform( -0.984808, 5.19659e-08, -0.173648, -0.173648, -5.06377e-08, 0.984808, 4.23832e-08, 1, 5.88922e-08, -4.4303, -0.659304, -1.17845 )
+
+[node name="MiniBoard8" parent="MiddleArea/Catcher" instance=ExtResource( 1 )]
+transform = Transform( -0.984808, 5.19659e-08, -0.173648, -0.173648, -5.06377e-08, 0.984808, 4.23832e-08, 1, 5.88922e-08, -4.4303, -0.659304, -0.778447 )
+
+[node name="DrainSection" type="Spatial" parent="MiddleArea"]
+transform = Transform( 8.54305e-08, 1, 6.64826e-08, -0.173648, -5.06377e-08, 0.984808, 0.984808, -9.56773e-08, 0.173648, -11.5491, -13.2772, 5.39593 )
+
+[node name="MiniBoard9" parent="MiddleArea/DrainSection" instance=ExtResource( 1 )]
+transform = Transform( 1, -1.42109e-14, 2.98023e-08, 0, 1, -3.55271e-15, -2.98023e-08, 1.42109e-14, 1, -1.90735e-06, -3, 0 )
+
+[node name="MiniBoard11" parent="MiddleArea/DrainSection" instance=ExtResource( 1 )]
+transform = Transform( 1, -1.42109e-14, 2.98023e-08, 0, 1, -3.55271e-15, -2.98023e-08, 1.42109e-14, 1, -0.186911, -3.14973, 1.06001 )
+
+[node name="MiniBoard10" parent="MiddleArea/DrainSection" instance=ExtResource( 1 )]
+transform = Transform( 1, -1.42109e-14, 2.98023e-08, 0, 1, -3.55271e-15, -2.98023e-08, 1.42109e-14, 1, -1.90735e-06, -2.6, 0 )
+
+[node name="DrainSection2" type="Spatial" parent="MiddleArea"]
+transform = Transform( 0.984808, -1.39389e-07, 0.173648, -0.173648, -5.06377e-08, 0.984808, -1.28478e-07, -1, -7.4073e-08, -12.2321, -14.2772, 5.39593 )
+
+[node name="MiniBoard9" parent="MiddleArea/DrainSection2" instance=ExtResource( 1 )]
+transform = Transform( 1, -1.42109e-14, 2.98023e-08, 0, 1, -3.55271e-15, -2.98023e-08, 1.42109e-14, 1, -1.90735e-06, -3, 0 )
+
+[node name="MiniBoard11" parent="MiddleArea/DrainSection2" instance=ExtResource( 1 )]
+transform = Transform( 1, -1.42109e-14, 2.98023e-08, 0, 1, -3.55271e-15, -2.98023e-08, 1.42109e-14, 1, -0.186911, -3.14973, 1.06001 )
+
+[node name="MiniBoard10" parent="MiddleArea/DrainSection2" instance=ExtResource( 1 )]
+transform = Transform( 1, -1.42109e-14, 2.98023e-08, 0, 1, -3.55271e-15, -2.98023e-08, 1.42109e-14, 1, -1.90735e-06, -2.6, 0 )
+
+[node name="DrainSection3" type="Spatial" parent="MiddleArea"]
+transform = Transform( -1.71525e-07, -1, -8.16634e-08, -0.173648, -5.06377e-08, 0.984808, -0.984808, 1.831e-07, -0.173648, -12.2321, -15.4318, 6.10418 )
+
+[node name="MiniBoard9" parent="MiddleArea/DrainSection3" instance=ExtResource( 1 )]
+transform = Transform( 1, -1.42109e-14, 2.98023e-08, 0, 1, -3.55271e-15, -2.98023e-08, 1.42109e-14, 1, -1.90735e-06, -3, 0 )
+
+[node name="MiniBoard11" parent="MiddleArea/DrainSection3" instance=ExtResource( 1 )]
+transform = Transform( 1, -1.42109e-14, 2.98023e-08, 0, 1, -3.55271e-15, -2.98023e-08, 1.42109e-14, 1, -0.186911, -3.14973, 1.06001 )
+
+[node name="MiniBoard10" parent="MiddleArea/DrainSection3" instance=ExtResource( 1 )]
+transform = Transform( 1, -1.42109e-14, 2.98023e-08, 0, 1, -3.55271e-15, -2.98023e-08, 1.42109e-14, 1, -1.90735e-06, -2.6, 0 )
+
+[node name="DrainSection4" type="Spatial" parent="MiddleArea"]
+transform = Transform( -0.984808, 2.26811e-07, -0.173648, -0.173648, -5.06377e-08, 0.984808, 2.14572e-07, 1, 8.92538e-08, -11.577, -16.4805, 6.10418 )
+
+[node name="MiniBoard9" parent="MiddleArea/DrainSection4" instance=ExtResource( 1 )]
+transform = Transform( 1, -1.42109e-14, 2.98023e-08, 0, 1, -3.55271e-15, -2.98023e-08, 1.42109e-14, 1, -1.90735e-06, -3, 0 )
+
+[node name="MiniBoard11" parent="MiddleArea/DrainSection4" instance=ExtResource( 1 )]
+transform = Transform( 1, -1.42109e-14, 2.98023e-08, 0, 1, -3.55271e-15, -2.98023e-08, 1.42109e-14, 1, -0.186911, -3.14973, 1.06001 )
+
+[node name="MiniBoard10" parent="MiddleArea/DrainSection4" instance=ExtResource( 1 )]
+transform = Transform( 1, -1.42109e-14, 2.98023e-08, 0, 1, -3.55271e-15, -2.98023e-08, 1.42109e-14, 1, -1.90735e-06, -2.6, 0 )
+
+[node name="DrainSection5" type="Spatial" parent="MiddleArea"]
+transform = Transform( 2.5762e-07, 1, 9.68442e-08, -0.173648, -5.06377e-08, 0.984808, 0.984808, -2.70523e-07, 0.173648, -11.6298, -17.3993, 5.29459 )
+
+[node name="MiniBoard9" parent="MiddleArea/DrainSection5" instance=ExtResource( 1 )]
+transform = Transform( 1, -1.42109e-14, 2.98023e-08, 0, 1, -3.55271e-15, -2.98023e-08, 1.42109e-14, 1, -1.90735e-06, -3, 0 )
+
+[node name="MiniBoard11" parent="MiddleArea/DrainSection5" instance=ExtResource( 1 )]
+transform = Transform( 1, -1.42109e-14, 2.98023e-08, 0, 1, -3.55271e-15, -2.98023e-08, 1.42109e-14, 1, -0.186911, -3.14973, 1.06001 )
+
+[node name="MiniBoard10" parent="MiddleArea/DrainSection5" instance=ExtResource( 1 )]
+transform = Transform( 1, -1.42109e-14, 2.98023e-08, 0, 1, -3.55271e-15, -2.98023e-08, 1.42109e-14, 1, -1.90735e-06, -2.6, 0 )
+
+[node name="BouncePlate" parent="MiddleArea" instance=ExtResource( 2 )]
+transform = Transform( -4.37114e-08, 0, -1, -0.0871558, 0.996195, 3.8097e-09, 0.996195, 0.0871557, -4.35451e-08, -14.0649, -18.0934, 9.95583 )
+
+[node name="MiniPlank" parent="MiddleArea/BouncePlate" instance=ExtResource( 4 )]
+transform = Transform( 1, 2.98023e-08, 0, 0, 1, 0, 0, 8.88178e-16, 1, 0.0475121, 0.00415802, -7 )
+
+[node name="MiniPlank2" parent="MiddleArea/BouncePlate" instance=ExtResource( 4 )]
+transform = Transform( 0.999843, -0.0173586, -0.00378013, 0.000649787, 0.248371, -0.968666, 0.0177536, 0.968509, 0.248343, 0.0754108, 2.1574, -9.70732 )
+
+[node name="MiniPlank3" parent="MiddleArea/BouncePlate" instance=ExtResource( 4 )]
+transform = Transform( 1, 2.98023e-08, 0, 0, 1, 0, 0, 8.88178e-16, 1, 6.1452, -0.200748, -7 )
+
+[node name="MiniPlank4" parent="MiddleArea/BouncePlate" instance=ExtResource( 4 )]
+transform = Transform( 0.999843, -0.0173586, -0.00378013, 0.000649787, 0.248371, -0.968666, 0.0177536, 0.968509, 0.248343, 6.1731, 1.95248, -9.70732 )
+
+[node name="MiniPlank5" parent="MiddleArea/BouncePlate" instance=ExtResource( 4 )]
+transform = Transform( 1, 5.96046e-08, 0, 0, 1, 0, 0, 1.77636e-15, 1, 12.212, -0.452568, -6.99999 )
+
+[node name="MiniPlank6" parent="MiddleArea/BouncePlate" instance=ExtResource( 4 )]
+transform = Transform( 0.999843, -0.0173586, -0.00378012, 0.000649758, 0.248371, -0.968666, 0.0177536, 0.968509, 0.248343, 12.2399, 1.70067, -9.70731 )
+
+[node name="MiniPlank7" parent="MiddleArea/BouncePlate" instance=ExtResource( 4 )]
+transform = Transform( 1, 8.9407e-08, 0, 0, 1, 0, 0, 3.10862e-15, 1, 18.2657, -0.736507, -6.99999 )
+
+[node name="MiniPlank8" parent="MiddleArea/BouncePlate" instance=ExtResource( 4 )]
+transform = Transform( 0.999843, -0.0173586, -0.00378011, 0.000649728, 0.248371, -0.968666, 0.0177536, 0.968509, 0.248343, 18.2936, 1.41673, -9.70732 )
+
+[node name="BouncePlate2" parent="MiddleArea/BouncePlate" instance=ExtResource( 2 )]
+transform = Transform( 1, 7.45058e-09, 0, 0, 1, 0, 0, 4.44089e-16, 1, 5.21202, -0.221786, 0 )
+
+[node name="BouncePlate3" parent="MiddleArea/BouncePlate" instance=ExtResource( 2 )]
+transform = Transform( 1, 7.45058e-09, 0, 0, 1, 0, 0, 4.44089e-16, 1, 10.6778, -0.424797, -1.90735e-06 )
+
+[node name="BouncePlate4" parent="MiddleArea/BouncePlate" instance=ExtResource( 2 )]
+transform = Transform( 1, 7.45058e-09, 0, 0, 1, 0, 0, 4.44089e-16, 1, 16.422, -0.843716, -1.90735e-06 )
+
+[node name="LongReturnTray" type="Spatial" parent="MiddleArea"]
+
+[node name="MiniPlank9" parent="MiddleArea/LongReturnTray" instance=ExtResource( 4 )]
+transform = Transform( 0.999541, 0.0298684, -0.00526661, -0.0303292, 0.984355, -0.173569, 0, 0.173648, 0.984809, -13.6962, -21.7895, 31.5578 )
+
+[node name="MiniPlank10" parent="MiddleArea/LongReturnTray" instance=ExtResource( 4 )]
+transform = Transform( 0.999541, 0.0274876, 0.0128177, -0.0303292, 0.905891, 0.422424, 0, -0.422618, 0.906309, -13.681, -21.2892, 35.4517 )
+
+[node name="MiniPlank11" parent="MiddleArea/LongReturnTray" instance=ExtResource( 4 )]
+transform = Transform( 0.999541, 0.0298684, -0.00526661, -0.0303292, 0.984355, -0.173569, 0, 0.173648, 0.984809, -7.69891, -21.9715, 31.5578 )
+
+[node name="MiniPlank12" parent="MiddleArea/LongReturnTray" instance=ExtResource( 4 )]
+transform = Transform( 0.999541, 0.0274876, 0.0128177, -0.0303292, 0.905891, 0.422424, 0, -0.422618, 0.906309, -7.68373, -21.4712, 35.4517 )
+
+[node name="MiniPlank13" parent="MiddleArea/LongReturnTray" instance=ExtResource( 4 )]
+transform = Transform( 0.999541, 0.0298684, -0.00526661, -0.0303292, 0.984355, -0.173569, 0, 0.173648, 0.984809, -1.70167, -22.1535, 31.5578 )
+
+[node name="MiniPlank14" parent="MiddleArea/LongReturnTray" instance=ExtResource( 4 )]
+transform = Transform( 0.999541, 0.0274876, 0.0128177, -0.0303292, 0.905891, 0.422424, 0, -0.422618, 0.906309, -1.68649, -21.6532, 35.4517 )
+
+[node name="MiniPlank15" parent="MiddleArea/LongReturnTray" instance=ExtResource( 4 )]
+transform = Transform( 0.999541, 0.0298684, -0.00526661, -0.0303292, 0.984355, -0.173569, 0, 0.173648, 0.984809, 4.29557, -22.3355, 31.5578 )
+
+[node name="MiniPlank16" parent="MiddleArea/LongReturnTray" instance=ExtResource( 4 )]
+transform = Transform( 0.999541, 0.0274876, 0.0128177, -0.0303292, 0.905891, 0.422424, 0, -0.422618, 0.906309, 4.31075, -21.8352, 35.4517 )
+
+[node name="MiniPlank17" parent="MiddleArea/LongReturnTray" instance=ExtResource( 4 )]
+transform = Transform( 0.999541, 0.0298684, -0.00526661, -0.0303292, 0.984355, -0.173569, 0, 0.173648, 0.984809, 10.2928, -22.5174, 31.5578 )
+
+[node name="MiniPlank18" parent="MiddleArea/LongReturnTray" instance=ExtResource( 4 )]
+transform = Transform( 0.999541, 0.0274876, 0.0128177, -0.0303292, 0.905891, 0.422424, 0, -0.422618, 0.906309, 10.308, -22.0171, 35.4517 )
+
+[node name="MiniPlank19" parent="MiddleArea/LongReturnTray" instance=ExtResource( 4 )]
+transform = Transform( 0.999541, 0.0298684, -0.00526661, -0.0303292, 0.984355, -0.173569, 0, 0.173648, 0.984809, 16.29, -22.6994, 31.5578 )
+
+[node name="MiniPlank20" parent="MiddleArea/LongReturnTray" instance=ExtResource( 4 )]
+transform = Transform( 0.999541, 0.0274876, 0.0128177, -0.0303292, 0.905891, 0.422424, 0, -0.422618, 0.906309, 16.3052, -22.1991, 35.4517 )
+
+[node name="MiniBoard12" parent="MiddleArea" instance=ExtResource( 1 )]
+transform = Transform( 0.984808, -3.14234e-07, 0.173648, -0.173648, -5.06377e-08, 0.984808, -3.00667e-07, -1, -1.04435e-07, -6.67608, -16.5746, 3.50418 )
+
+[node name="MiniBoard13" parent="MiddleArea" instance=ExtResource( 1 )]
+transform = Transform( 0.984808, -3.14234e-07, 0.173648, -0.173648, -5.06377e-08, 0.984808, -3.00667e-07, -1, -1.04435e-07, -6.67608, -16.5746, 3.10418 )
+
+[node name="MiniBoard14" parent="MiddleArea" instance=ExtResource( 1 )]
+transform = Transform( 0.984808, -3.14234e-07, 0.173648, -0.173648, -5.06377e-08, 0.984808, -3.00667e-07, -1, -1.04435e-07, -1.75248, -17.469, 3.50418 )
+
+[node name="MiniBoard15" parent="MiddleArea" instance=ExtResource( 1 )]
+transform = Transform( 0.984808, -3.14234e-07, 0.173648, -0.173648, -5.06377e-08, 0.984808, -3.00667e-07, -1, -1.04435e-07, -1.75248, -17.469, 3.10418 )
+
+[node name="MiniBoard16" parent="MiddleArea" instance=ExtResource( 1 )]
+transform = Transform( 2.5762e-07, 1, 9.68442e-08, -0.0871556, -7.40226e-08, 0.996195, 0.996195, -2.6508e-07, 0.0871556, 0.871542, -18.1675, 5.45644 )
+
+[node name="MiniBoard17" parent="MiddleArea" instance=ExtResource( 1 )]
+transform = Transform( 2.5762e-07, 1, 9.68442e-08, -0.0871556, -7.40226e-08, 0.996195, 0.996195, -2.6508e-07, 0.0871556, 1.27154, -18.1675, 5.45644 )
+
+[node name="MiniBoard18" parent="MiddleArea" instance=ExtResource( 1 )]
+transform = Transform( -0.016221, 0.999867, -0.00141908, -0.0871556, -7.40226e-08, 0.996195, 0.996063, 0.0162829, 0.0871441, 1.42601, -17.1662, 5.45644 )
+
+[node name="MiniBoard19" parent="MiddleArea" instance=ExtResource( 1 )]
+transform = Transform( 2.5762e-07, 1, 9.68442e-08, -0.0871556, -7.40226e-08, 0.996195, 0.996195, -2.6508e-07, 0.0871556, 0.871542, -18.6095, 10.4357 )
+
+[node name="MiniBoard20" parent="MiddleArea" instance=ExtResource( 1 )]
+transform = Transform( 2.5762e-07, 1, 9.68442e-08, -0.0871556, -7.40226e-08, 0.996195, 0.996195, -2.6508e-07, 0.0871556, 1.27154, -18.6095, 10.4357 )
+
+[node name="MiniBoard21" parent="MiddleArea" instance=ExtResource( 1 )]
+transform = Transform( 2.5762e-07, 1, 9.68442e-08, -0.0871556, -7.40226e-08, 0.996195, 0.996195, -2.6508e-07, 0.0871556, 0.871542, -19.0894, 15.4035 )
+
+[node name="MiniBoard22" parent="MiddleArea" instance=ExtResource( 1 )]
+transform = Transform( 2.5762e-07, 1, 9.68442e-08, -0.0871556, -7.40226e-08, 0.996195, 0.996195, -2.6508e-07, 0.0871556, 1.27154, -19.0894, 15.4035 )
+
+[node name="MiniBoard23" parent="MiddleArea" instance=ExtResource( 1 )]
+transform = Transform( 2.5762e-07, 1, 9.68442e-08, -0.0871556, -7.40226e-08, 0.996195, 0.996195, -2.6508e-07, 0.0871556, 0.871542, -19.5838, 20.3873 )
+
+[node name="MiniBoard24" parent="MiddleArea" instance=ExtResource( 1 )]
+transform = Transform( 2.5762e-07, 1, 9.68442e-08, -0.0871556, -7.40226e-08, 0.996195, 0.996195, -2.6508e-07, 0.0871556, 1.27154, -19.5838, 20.3873 )
+
+[node name="MiniBoard25" parent="MiddleArea" instance=ExtResource( 1 )]
+transform = Transform( 2.5762e-07, 1, 9.68442e-08, -0.0871556, -7.40226e-08, 0.996195, 0.996195, -2.6508e-07, 0.0871556, 0.871542, -20.0514, 25.3578 )
+
+[node name="MiniBoard26" parent="MiddleArea" instance=ExtResource( 1 )]
+transform = Transform( 2.5762e-07, 1, 9.68442e-08, -0.0871556, -7.40226e-08, 0.996195, 0.996195, -2.6508e-07, 0.0871556, 1.27154, -20.0514, 25.3578 )
+
+[node name="MiniBoard27" parent="MiddleArea" instance=ExtResource( 1 )]
+transform = Transform( 2.5762e-07, 1, 9.68442e-08, -0.0871556, -7.40226e-08, 0.996195, 0.996195, -2.6508e-07, 0.0871556, 0.871542, -20.5458, 30.3283 )
+
+[node name="MiniBoard28" parent="MiddleArea" instance=ExtResource( 1 )]
+transform = Transform( 2.5762e-07, 1, 9.68442e-08, -0.0871556, -7.40226e-08, 0.996195, 0.996195, -2.6508e-07, 0.0871556, 1.27154, -20.5458, 30.3283 )
