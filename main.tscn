@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://main.gd" type="Script" id=1]
 [ext_resource path="res://maps/marble_run_towers/marble_run_towers.tscn" type="PackedScene" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://ui/menu_hover_button.tres" type="StyleBox" id=8]
 [ext_resource path="res://items/zone_outline.gdshader" type="Shader" id=9]
 [ext_resource path="res://sfx/game_over.mp3" type="AudioStream" id=10]
+[ext_resource path="res://sfx/game_start.mp3" type="AudioStream" id=11]
 
 [sub_resource type="SpatialMaterial" id=1]
 metallic = 1.0
@@ -443,6 +444,30 @@ tracks/22/keys = {
 "update": 0,
 "values": [ true ]
 }
+tracks/23/type = "value"
+tracks/23/path = NodePath("GoLabel:visible")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/24/type = "value"
+tracks/24/path = NodePath("GameStartSound:playing")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=23]
 resource_name = "setup_game"
@@ -672,6 +697,30 @@ tracks/20/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ false ]
+}
+tracks/21/type = "value"
+tracks/21/path = NodePath("GoLabel:visible")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/22/type = "value"
+tracks/22/path = NodePath("GameStartSound:playing")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/keys = {
+"times": PoolRealArray( 3 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
 }
 
 [sub_resource type="DynamicFont" id=24]
@@ -954,7 +1003,7 @@ SLO-MO: bullet time!
 
 Be mindful of how much money you have left! Each item is $1.00.
 
-Rotate the view by click-and-dragging with your right mouse button."
+Rotate the view by click-and-dragging with your right mouse button. Press Escape to pause/unpause."
 dialog_autowrap = true
 
 [node name="CreditsDialog" type="AcceptDialog" parent="."]
@@ -1045,6 +1094,22 @@ bbcode_enabled = true
 bbcode_text = "[center][color=#ff3333]Game Over![/color][/center]"
 text = "Game Over!"
 
+[node name="GoLabel" type="RichTextLabel" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -181.5
+margin_top = -56.0
+margin_right = 181.5
+margin_bottom = 56.0
+rect_pivot_offset = Vector2( 180, 56 )
+custom_fonts/normal_font = SubResource( 27 )
+bbcode_enabled = true
+bbcode_text = "[center][color=#33ff33]Go![/color][/center]"
+text = "Go!"
+
 [node name="ButtonReturn" type="Button" parent="."]
 visible = false
 anchor_left = 0.5
@@ -1069,6 +1134,10 @@ text = "Menu"
 
 [node name="GameOverSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 10 )
+
+[node name="GameStartSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
+volume_db = -5.0
 
 [connection signal="button_down" from="BottomBar/ButtonExplosive" to="." method="_on_ButtonExplosive_button_down"]
 [connection signal="button_down" from="BottomBar/ButtonAntigrav" to="." method="_on_ButtonAntigrav_button_down"]

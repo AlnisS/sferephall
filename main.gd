@@ -67,6 +67,13 @@ func _physics_process(delta):
 func _game_actions(delta):
 	survival_time += delta
 	
+	if survival_time > 1.5:
+		$GoLabel.hide()
+	else:
+		var scl = 1 + survival_time * survival_time * survival_time
+		$GoLabel.rect_scale = Vector2(scl, scl)
+		$GoLabel.modulate = Color(1.0, 1.0, 1.0, 1.5 - survival_time)
+	
 	mouse_position = get_viewport().get_mouse_position()
 	
 	# camera movement
